@@ -1,6 +1,5 @@
 package com.theonlytails.rubymod.util.materials
 
-import com.theonlytails.rubymod.RubyMod
 import com.theonlytails.rubymod.registries.ItemRegistry
 import net.minecraft.entity.EquipmentSlot
 import net.minecraft.item.ArmorMaterial
@@ -10,7 +9,10 @@ import net.minecraft.sound.SoundEvents
 
 class RubyArmorMaterial : ArmorMaterial {
 	companion object {
+		@JvmStatic
 		private val BASE_DURABILITY = listOf(11, 16, 15, 13)
+
+		@JvmStatic
 		private val PROTECTION_VALUES = listOf(2, 5, 6, 2)
 	}
 
@@ -24,7 +26,7 @@ class RubyArmorMaterial : ArmorMaterial {
 
 	override fun getRepairIngredient(): Ingredient = Ingredient.ofItems(ItemRegistry.RUBY)
 
-	override fun getName() = "${RubyMod.MOD_ID}:ruby"
+	override fun getName() = "ruby"
 
 	override fun getToughness() = 0f
 
