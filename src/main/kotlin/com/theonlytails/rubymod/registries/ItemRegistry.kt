@@ -19,6 +19,8 @@ object ItemRegistry {
 
 	val RUBY: Item = register("ruby", Item(DEFAULT_ITEM_PROPERTY))
 
+	val RUBY_BLOCK: Item = register("ruby_block", BlockItem(BlockRegistry.RUBY_BLOCK, DEFAULT_ITEM_PROPERTY))
+
 	val RUBY_HELMET: Item = register("ruby_helmet",
 		ArmorItem(rubyArmorMaterial, EquipmentSlot.HEAD, DEFAULT_ITEM_PROPERTY))
 
