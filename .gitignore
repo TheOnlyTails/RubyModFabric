@@ -15,3 +15,6 @@ out/
 
 run/
 minecraft/
+
+# datagen
+src/generated/resources/.cache/
