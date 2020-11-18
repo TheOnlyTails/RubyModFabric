@@ -4,5 +4,10 @@
   "item.rubymod.ruby_chestplate": "Ruby Chestplate",
   "item.rubymod.ruby_leggings": "Ruby Leggings",
   "item.rubymod.ruby_boots": "Ruby Boots",
+  "item.rubymod.ruby_pickaxe": "Ruby Pickaxe",
+  "item.rubymod.ruby_axe": "Ruby Axe",
+  "item.rubymod.ruby_sword": "Ruby Sword",
+  "item.rubymod.ruby_shovel": "Ruby Shovel",
+  "item.rubymod.ruby_hoe": "Ruby Hoe",
   "itemGroup.rubymod.ruby_tab": "RubyMod"
 }
