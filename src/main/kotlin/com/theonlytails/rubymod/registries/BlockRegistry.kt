@@ -1,10 +1,12 @@
 package com.theonlytails.rubymod.registries
 
 import com.theonlytails.rubymod.RubyMod
+import com.theonlytails.rubymod.registries.blocks.RubyCarpet
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags
 import net.minecraft.block.Block
 import net.minecraft.block.Material
+import net.minecraft.block.MaterialColor
 import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.registry.Registry
 
@@ -19,4 +21,12 @@ object BlockRegistry {
 			.breakByTool(FabricToolTags.PICKAXES, 2)
 			.requiresTool()
 	))
+
+	val RUBY_WOOL: Block = register("ruby_wool", Block(
+		FabricBlockSettings.of(Material.WOOL, MaterialColor.RED)
+			.strength(0.8f)
+			.sounds(BlockSoundGroup.WOOL)
+	))
+
+	val RUBY_CARPET: Block = register("ruby_carpet", RubyCarpet())
 }

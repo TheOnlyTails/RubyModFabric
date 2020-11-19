@@ -1,9 +1,9 @@
 package com.theonlytails.rubymod
 
-import com.theonlytails.rubymod.registries.BlockRegistry
-import com.theonlytails.rubymod.registries.EnchantmentRegistry
-import com.theonlytails.rubymod.registries.ItemRegistry
+import com.theonlytails.rubymod.entities.RubySheepEntity
+import com.theonlytails.rubymod.registries.*
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
 import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
@@ -23,6 +23,9 @@ object RubyMod : ModInitializer {
         ItemRegistry
         BlockRegistry
         EnchantmentRegistry
+        EntityTypeRegistry
+
+        FabricDefaultAttributeRegistry.register(EntityTypeRegistry.RUBY_SHEEP, RubySheepEntity.setCustomAttributes())
 
         LOGGER.info("The mod has been initialized!")
     }

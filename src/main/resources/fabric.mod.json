@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.theonlytails.rubymod.RubyMod::INSTANCE"
+    ],
+    "client": [
+      "com.theonlytails.rubymod.client.RubyModClient"
     ]
   },
   "depends": {

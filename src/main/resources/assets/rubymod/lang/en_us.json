@@ -11,6 +11,9 @@
   "item.rubymod.ruby_hoe": "Ruby Hoe",
   "item.rubymod.poisoned_apple": "Poisoned Apple",
   "block.rubymod.ruby_block": "Ruby Block",
+  "block.rubymod.ruby_wool": "Ruby Wool",
+  "block.rubymod.ruby_carpet": "Ruby Carpet",
   "enchantment.rubymod.stinger": "Stinger",
+  "entity.rubymod.ruby_sheep": "Ruby Sheep",
   "itemGroup.rubymod.ruby_tab": "RubyMod"
 }

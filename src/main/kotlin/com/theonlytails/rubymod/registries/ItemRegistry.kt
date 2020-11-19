@@ -77,4 +77,8 @@ object ItemRegistry {
 				.alwaysEdible()
 				.build()
 			)))
+
+	val RUBY_WOOL: Item = register("ruby_wool", BlockItem(BlockRegistry.RUBY_WOOL, Settings().group(RubyMod.RUBY_TAB)))
+	val RUBY_CARPET: Item =
+		register("ruby_carpet", BlockItem(BlockRegistry.RUBY_CARPET, Settings().group(RubyMod.RUBY_TAB)))
 }

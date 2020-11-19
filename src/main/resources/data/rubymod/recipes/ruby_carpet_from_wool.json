@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "carpet",
+  "pattern": [
+    "rr"
+  ],
+  "key": {
+    "r": {
+      "item": "rubymod:ruby_wool"
+    }
+  },
+  "result": {
+    "item": "rubymod:ruby_carpet",
+    "count": 3
+  }
+}
