@@ -1,6 +1,7 @@
 package com.theonlytails.rubymod
 
 import com.theonlytails.rubymod.registries.BlockRegistry
+import com.theonlytails.rubymod.registries.EnchantmentRegistry
 import com.theonlytails.rubymod.registries.ItemRegistry
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
@@ -21,6 +22,7 @@ object RubyMod : ModInitializer {
     override fun onInitialize() {
         ItemRegistry
         BlockRegistry
+        EnchantmentRegistry
 
         LOGGER.info("The mod has been initialized!")
     }

@@ -10,5 +10,8 @@
       "item": "rubymod:ruby"
     }
   },
-  "result": "rubymod:ruby_block"
+  "result": {
+    "item": "rubymod:ruby_block",
+    "count": 1
+  }
 }
