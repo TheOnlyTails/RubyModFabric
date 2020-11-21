@@ -11,8 +11,9 @@ import net.minecraft.item.Item.Settings
 import net.minecraft.util.registry.Registry
 
 object ItemRegistry {
-	private fun register(id: String, item: Item) = Registry.register(Registry.ITEM, RubyMod.id(id), item)
-	private val DEFAULT_ITEM_PROPERTY: Settings = Settings().group(RubyMod.RUBY_TAB)
+	fun register(id: String, item: Item): Item = Registry.register(Registry.ITEM, RubyMod.id(id), item)
+	val DEFAULT_ITEM_PROPERTY: Settings = Settings().group(RubyMod.RUBY_TAB)
+	val DEFAULT_BLOCK_ITEM_PROPERTY: Settings = Settings().group(RubyMod.RUBY_TAB).maxDamage(0)
 
 	@JvmStatic
 	val rubyArmorMaterial = RubyArmorMaterial()
@@ -21,8 +22,7 @@ object ItemRegistry {
 	val rubyToolMaterial = RubyToolMaterial()
 
 	val RUBY: Item = register("ruby", Item(DEFAULT_ITEM_PROPERTY))
-
-	val RUBY_BLOCK: Item = register("ruby_block", BlockItem(BlockRegistry.RUBY_BLOCK, DEFAULT_ITEM_PROPERTY))
+	// val RUBY_BLOCK: Item = register("ruby_block", BlockItem(BlockRegistry.RUBY_BLOCK, DEFAULT_ITEM_PROPERTY))
 
 	val RUBY_HELMET: Item = register("ruby_helmet",
 		ArmorItem(rubyArmorMaterial, EquipmentSlot.HEAD, DEFAULT_ITEM_PROPERTY))
@@ -77,8 +77,4 @@ object ItemRegistry {
 				.alwaysEdible()
 				.build()
 			)))
-
-	val RUBY_WOOL: Item = register("ruby_wool", BlockItem(BlockRegistry.RUBY_WOOL, Settings().group(RubyMod.RUBY_TAB)))
-	val RUBY_CARPET: Item =
-		register("ruby_carpet", BlockItem(BlockRegistry.RUBY_CARPET, Settings().group(RubyMod.RUBY_TAB)))
 }

@@ -1,4 +1,4 @@
-package com.theonlytails.rubymod.registries.blocks
+package com.theonlytails.rubymod.blocks
 
 import net.minecraft.block.*
 import net.minecraft.sound.BlockSoundGroup

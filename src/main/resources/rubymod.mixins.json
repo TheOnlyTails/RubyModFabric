@@ -4,7 +4,8 @@
   "package": "com.theonlytails.rubymod.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "ArmorItemMixin"
+    "ArmorItemMixin",
+    "BrewingRecipeRegistryMixin"
   ],
   "client": [],
   "server": [],

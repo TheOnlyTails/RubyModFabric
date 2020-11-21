@@ -1,7 +1,7 @@
 package com.theonlytails.rubymod.registries
 
 import com.theonlytails.rubymod.RubyMod
-import com.theonlytails.rubymod.registries.blocks.RubyCarpet
+import com.theonlytails.rubymod.blocks.RubyCarpet
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags
 import net.minecraft.block.Block
@@ -11,7 +11,10 @@ import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.registry.Registry
 
 object BlockRegistry {
-	private fun register(id: String, block: Block) = Registry.register(Registry.BLOCK, RubyMod.id(id), block)
+	val customBlocks = mutableListOf<Block>()
+	private fun register(id: String, block: Block): Block {
+		return Registry.register(Registry.BLOCK, RubyMod.id(id), block).also { customBlocks.add(block) }
+	}
 
 	val RUBY_BLOCK: Block = register("ruby_block", Block(
 		FabricBlockSettings.of(Material.METAL)
