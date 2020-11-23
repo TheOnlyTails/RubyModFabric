@@ -1,9 +1,12 @@
 package com.theonlytails.rubymod.client
 
 import com.theonlytails.rubymod.client.render.RubySheepRenderer
+import com.theonlytails.rubymod.registries.BlockRegistry
 import com.theonlytails.rubymod.registries.EntityTypeRegistry
 import net.fabricmc.api.ClientModInitializer
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry
+import net.minecraft.client.render.RenderLayer
 import net.minecraft.client.render.entity.EntityRenderDispatcher
 
 class RubyModClient : ClientModInitializer {
@@ -14,5 +17,7 @@ class RubyModClient : ClientModInitializer {
 			->
 			RubySheepRenderer(dispatcher)
 		}
+
+		BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.LOGIC_GATE, RenderLayer.getCutout())
 	}
 }
