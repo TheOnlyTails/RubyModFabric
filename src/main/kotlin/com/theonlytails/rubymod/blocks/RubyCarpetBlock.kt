@@ -9,7 +9,7 @@ import net.minecraft.world.BlockView
 import net.minecraft.world.WorldAccess
 import net.minecraft.world.WorldView
 
-class RubyCarpet : Block(Settings.of(Material.CARPET, MaterialColor.RED)
+class RubyCarpetBlock : Block(Settings.of(Material.CARPET, MaterialColor.RED)
 	.strength(0.1f)
 	.sounds(BlockSoundGroup.WOOL)) {
 	private val shape = createCuboidShape(0.0, 0.0, 0.0, 16.0, 1.0, 16.0)

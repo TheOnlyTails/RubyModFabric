@@ -1,6 +1,7 @@
 package com.theonlytails.rubymod.registries
 
 import com.theonlytails.rubymod.RubyMod
+import com.theonlytails.rubymod.items.RubyArmorItem
 import com.theonlytails.rubymod.util.materials.RubyArmorMaterial
 import com.theonlytails.rubymod.util.materials.RubyToolMaterial
 import net.minecraft.entity.EquipmentSlot
@@ -22,19 +23,14 @@ object ItemRegistry {
 	val rubyToolMaterial = RubyToolMaterial()
 
 	val RUBY: Item = register("ruby", Item(DEFAULT_ITEM_PROPERTY))
-	// val RUBY_BLOCK: Item = register("ruby_block", BlockItem(BlockRegistry.RUBY_BLOCK, DEFAULT_ITEM_PROPERTY))
 
-	val RUBY_HELMET: Item = register("ruby_helmet",
-		ArmorItem(rubyArmorMaterial, EquipmentSlot.HEAD, DEFAULT_ITEM_PROPERTY))
+	val RUBY_HELMET: Item = register("ruby_helmet", RubyArmorItem(EquipmentSlot.HEAD))
 
-	val RUBY_CHESTPLATE: Item = register("ruby_chestplate",
-		ArmorItem(rubyArmorMaterial, EquipmentSlot.CHEST, DEFAULT_ITEM_PROPERTY))
+	val RUBY_CHESTPLATE: Item = register("ruby_chestplate", RubyArmorItem(EquipmentSlot.CHEST))
 
-	val RUBY_LEGGINGS: Item = register("ruby_leggings",
-		ArmorItem(rubyArmorMaterial, EquipmentSlot.LEGS, DEFAULT_ITEM_PROPERTY))
+	val RUBY_LEGGINGS: Item = register("ruby_leggings", RubyArmorItem(EquipmentSlot.LEGS))
 
-	val RUBY_BOOTS: Item = register("ruby_boots",
-		ArmorItem(rubyArmorMaterial, EquipmentSlot.FEET, DEFAULT_ITEM_PROPERTY))
+	val RUBY_BOOTS: Item = register("ruby_boots", RubyArmorItem(EquipmentSlot.FEET))
 
 	val RUBY_PICKAXE: Item = register("ruby_pickaxe",
 		object : PickaxeItem(rubyToolMaterial, 1, -2.8f, DEFAULT_ITEM_PROPERTY) {})

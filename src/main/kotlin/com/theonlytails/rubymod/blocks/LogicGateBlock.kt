@@ -16,7 +16,7 @@ import net.minecraft.util.math.Direction
 import net.minecraft.world.World
 import net.minecraft.world.WorldAccess
 
-class LogicGate(settings: Settings) : AbstractRedstoneGateBlock(settings), AdvancedRedstoneConnector {
+class LogicGateBlock(settings: Settings) : AbstractRedstoneGateBlock(settings), AdvancedRedstoneConnector {
 
 	init {
 		this.defaultState = this.stateManager.defaultState

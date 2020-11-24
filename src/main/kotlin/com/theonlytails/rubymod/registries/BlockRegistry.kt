@@ -1,8 +1,8 @@
 package com.theonlytails.rubymod.registries
 
 import com.theonlytails.rubymod.RubyMod
-import com.theonlytails.rubymod.blocks.LogicGate
-import com.theonlytails.rubymod.blocks.RubyCarpet
+import com.theonlytails.rubymod.blocks.LogicGateBlock
+import com.theonlytails.rubymod.blocks.RubyCarpetBlock
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags
 import net.minecraft.block.*
@@ -40,9 +40,9 @@ object BlockRegistry {
 			.sounds(BlockSoundGroup.WOOL)
 	))
 
-	val RUBY_CARPET: Block = register("ruby_carpet", RubyCarpet())
+	val RUBY_CARPET: Block = register("ruby_carpet", RubyCarpetBlock())
 
-	val LOGIC_GATE: Block = register("logic_gate", LogicGate(Settings.of(Material.SUPPORTED)
+	val LOGIC_GATE: Block = register("logic_gate", LogicGateBlock(Settings.of(Material.SUPPORTED)
 		.breakInstantly()
 		.sounds(BlockSoundGroup.METAL)))
 }
