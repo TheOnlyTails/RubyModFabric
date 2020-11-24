@@ -5,12 +5,11 @@ import com.theonlytails.rubymod.blocks.LogicGate
 import com.theonlytails.rubymod.blocks.RubyCarpet
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags
+import net.minecraft.block.*
 import net.minecraft.block.AbstractBlock.Settings
-import net.minecraft.block.Block
-import net.minecraft.block.Material
-import net.minecraft.block.MaterialColor
 import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.registry.Registry
+import java.util.Random
 
 object BlockRegistry {
 	val customBlocks = mutableListOf<Block>()
@@ -26,6 +25,14 @@ object BlockRegistry {
 			.breakByTool(FabricToolTags.PICKAXES, 2)
 			.requiresTool()
 	))
+
+	val RUBY_ORE: Block = register("ruby_ore", object : OreBlock(FabricBlockSettings.of(Material.STONE)
+		.hardness(3.0f)
+		.resistance(3.0f)
+		.sounds(BlockSoundGroup.STONE)
+		.breakByTool(FabricToolTags.PICKAXES, 2)) {
+		override fun getExperienceWhenMined(random: Random) = 3
+	})
 
 	val RUBY_WOOL: Block = register("ruby_wool", Block(
 		FabricBlockSettings.of(Material.WOOL, MaterialColor.RED)

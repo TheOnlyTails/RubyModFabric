@@ -6,6 +6,7 @@ import com.theonlytails.rubymod.registries.*
 import com.theonlytails.rubymod.util.materials.addPotency
 import com.theonlytails.rubymod.util.materials.addTime
 import com.theonlytails.rubymod.util.materials.invertPotion
+import com.theonlytails.rubymod.world.FeatureGen
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
@@ -34,6 +35,8 @@ object RubyMod : ModInitializer {
 		registerBlockItems()
 
 		FabricDefaultAttributeRegistry.register(EntityTypeRegistry.RUBY_SHEEP, RubySheepEntity.setCustomAttributes())
+
+		FeatureGen.addFeaturesToBiomes()
 
 		BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.WATER,
 			ItemRegistry.RUBY,
