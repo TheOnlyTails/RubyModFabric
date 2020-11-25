@@ -14,7 +14,7 @@ import net.minecraft.util.registry.Registry
 object ItemRegistry {
 	fun register(id: String, item: Item): Item = Registry.register(Registry.ITEM, RubyMod.id(id), item)
 	val DEFAULT_ITEM_PROPERTY: Settings = Settings().group(RubyMod.RUBY_TAB)
-	val DEFAULT_BLOCK_ITEM_PROPERTY: Settings = Settings().group(RubyMod.RUBY_TAB).maxDamage(0)
+	val DEFAULT_NO_DAMAGE_PROPERTY: Settings = Settings().group(RubyMod.RUBY_TAB).maxDamage(0)
 
 	@JvmStatic
 	val rubyArmorMaterial = RubyArmorMaterial()
@@ -22,7 +22,7 @@ object ItemRegistry {
 	@JvmStatic
 	val rubyToolMaterial = RubyToolMaterial()
 
-	val RUBY: Item = register("ruby", Item(DEFAULT_ITEM_PROPERTY))
+	val RUBY: Item = register("ruby", Item(DEFAULT_NO_DAMAGE_PROPERTY))
 
 	val RUBY_HELMET: Item = register("ruby_helmet", RubyArmorItem(EquipmentSlot.HEAD))
 
@@ -73,4 +73,12 @@ object ItemRegistry {
 				.alwaysEdible()
 				.build()
 			)))
+
+	val RUBY_SHEEP_SPAWN_EGG = register("ruby_sheep_spawn_egg",
+		SpawnEggItem(
+			EntityTypeRegistry.RUBY_SHEEP,
+			0xE3E6E7,
+			0xFD0D0D,
+			DEFAULT_NO_DAMAGE_PROPERTY.maxCount(64)
+		))
 }

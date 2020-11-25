@@ -15,6 +15,7 @@ group = property("maven_group")
 
 repositories {
 	maven("http://maven.fabricmc.net/")
+	maven("https://raw.githubusercontent.com/Devan-Kerman/Devan-Repo/master/")
 }
 
 dependencies {
@@ -27,6 +28,9 @@ dependencies {
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${property("fabric_version")}")
 
 	modImplementation("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin_version")}")
+
+	// ARRP API - for data gen
+	modImplementation("net.devtech:arrp:${property("arrp_version")}")
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
