@@ -9,6 +9,7 @@ object DataGeneratorRunner {
 
 	fun initGenerators() {
 		LangGenerator.generate()
+		RecipeGenerator.generate()
 
 		RRPCallback.EVENT.register { it.add(RESOURCE_PACK) }
 	}
