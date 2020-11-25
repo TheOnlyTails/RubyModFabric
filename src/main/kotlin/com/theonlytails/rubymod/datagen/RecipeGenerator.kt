@@ -18,6 +18,7 @@ object RecipeGenerator {
 	fun generate() {
 		shapedRecipes()
 		shapelessRecipes()
+		smeltingRecipes()
 	}
 
 	private fun shapedRecipes() {
