@@ -1,12 +1,10 @@
 package com.theonlytails.rubymod.datagen
 
-import com.theonlytails.rubymod.RubyMod
 import com.theonlytails.rubymod.RubyMod.id
 import com.theonlytails.rubymod.datagen.DataGeneratorRunner.RESOURCE_PACK
 import com.theonlytails.rubymod.registries.*
 import net.devtech.arrp.json.lang.JLang
 import net.devtech.arrp.json.lang.JLang.lang
-import net.minecraft.util.Identifier
 
 object LangGenerator {
 	fun generate() {
@@ -51,10 +49,6 @@ object LangGenerator {
 	}
 
 	private fun addLang(lang: JLang) {
-		RESOURCE_PACK.addLang(id(RubyMod.MOD_ID), lang)
-	}
-
-	private fun addLangCustomNamespace(id: Identifier, lang: JLang) {
-		RESOURCE_PACK.addLang(id, lang)
+		RESOURCE_PACK.addLang(id("en_us"), lang)
 	}
 }
