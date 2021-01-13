@@ -86,7 +86,7 @@ class RubySheepEntity(type: EntityType<out SheepEntity?>, worldIn: World) : Shee
 		val i = 1 + random.nextInt(3)
 
 		for (j in 0 until i) {
-			val itemEntity = this.dropItem(BlockRegistry.RUBY_WOOL, 1)
+			val itemEntity = this.dropItem(BlockRegistry.rubyWool, 1)
 			if (itemEntity != null) {
 				itemEntity.velocity =
 					itemEntity.velocity.add(((random.nextFloat() - random.nextFloat()) * 0.1f).toDouble(),
@@ -115,7 +115,7 @@ class RubySheepEntity(type: EntityType<out SheepEntity?>, worldIn: World) : Shee
 	override fun getLootTableId(): Identifier = id("entities/ruby_sheep")
 
 	companion object {
-		val TEMPTATION_ITEMS: Ingredient = Ingredient.ofItems(ItemRegistry.RUBY, Items.WHEAT)
+		val TEMPTATION_ITEMS: Ingredient = Ingredient.ofItems(ItemRegistry.ruby, Items.WHEAT)
 
 		@JvmStatic
 		fun setCustomAttributes(): DefaultAttributeContainer.Builder {

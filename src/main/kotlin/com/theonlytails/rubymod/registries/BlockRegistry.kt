@@ -17,7 +17,7 @@ object BlockRegistry {
 		return Registry.register(Registry.BLOCK, id(id), block).also { customBlocks.add(block) }
 	}
 
-	val RUBY_BLOCK: Block = register("ruby_block", Block(
+	val rubyBlock = register("ruby_block", Block(
 		FabricBlockSettings.of(Material.METAL)
 			.hardness(5f)
 			.resistance(6f)
@@ -26,7 +26,7 @@ object BlockRegistry {
 			.requiresTool()
 	))
 
-	val RUBY_ORE: Block = register("ruby_ore", object : OreBlock(FabricBlockSettings.of(Material.STONE)
+	val rubyOre = register("ruby_ore", object : OreBlock(FabricBlockSettings.of(Material.STONE)
 		.hardness(3.0f)
 		.resistance(3.0f)
 		.sounds(BlockSoundGroup.STONE)
@@ -34,15 +34,15 @@ object BlockRegistry {
 		override fun getExperienceWhenMined(random: Random) = 3
 	})
 
-	val RUBY_WOOL: Block = register("ruby_wool", Block(
+	val rubyWool = register("ruby_wool", Block(
 		FabricBlockSettings.of(Material.WOOL, MaterialColor.RED)
 			.strength(0.8f)
 			.sounds(BlockSoundGroup.WOOL)
 	))
 
-	val RUBY_CARPET: Block = register("ruby_carpet", RubyCarpetBlock())
+	val rubyCarpet = register("ruby_carpet", RubyCarpetBlock())
 
-	val LOGIC_GATE: Block = register("logic_gate", LogicGateBlock(Settings.of(Material.SUPPORTED)
+	val logicGate = register("logic_gate", LogicGateBlock(Settings.of(Material.SUPPORTED)
 		.breakInstantly()
 		.sounds(BlockSoundGroup.METAL)))
 }

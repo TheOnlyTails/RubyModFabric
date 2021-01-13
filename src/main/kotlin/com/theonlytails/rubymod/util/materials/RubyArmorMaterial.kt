@@ -24,7 +24,7 @@ class RubyArmorMaterial : ArmorMaterial {
 
 	override fun getEquipSound(): SoundEvent = SoundEvents.ITEM_ARMOR_EQUIP_IRON
 
-	override fun getRepairIngredient(): Ingredient = Ingredient.ofItems(ItemRegistry.RUBY)
+	override fun getRepairIngredient(): Ingredient = Ingredient.ofItems(ItemRegistry.ruby)
 
 	override fun getName() = "ruby"
 

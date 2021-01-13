@@ -9,8 +9,8 @@ import java.nio.file.Paths
 
 object DataGeneratorRunner {
 	val RESOURCE_PACK: RuntimeResourcePack = RuntimeResourcePack.create(id(RubyMod.MOD_ID).toString())
-	val handler: DataGeneratorHandler =
-		DataGeneratorHandler.create(Paths.get("../src/generated/resource"))
+	private val handler: DataGeneratorHandler =
+		DataGeneratorHandler.create(Paths.get("../src/generated/resources"))
 
 	fun register() {
 		LangGenerator.generate()
@@ -18,6 +18,8 @@ object DataGeneratorRunner {
 		LootTableGenerator.generate(handler)
 		TagGenerator.generateTags(handler)
 		ModelGenerator.generate(handler)
+
+		handler.run()
 
 		RRPCallback.EVENT.register { it.add(RESOURCE_PACK) }
 	}

@@ -15,5 +15,5 @@ class RubyToolMaterial : ToolMaterial {
 
 	override fun getEnchantability() = 12
 
-	override fun getRepairIngredient(): Ingredient = Ingredient.ofItems(ItemRegistry.RUBY)
+	override fun getRepairIngredient(): Ingredient = Ingredient.ofItems(ItemRegistry.ruby)
 }

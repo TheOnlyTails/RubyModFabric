@@ -16,26 +16,26 @@ object TagGenerator {
 
 	private fun generateBlockTags(tag: TagData) {
 		tag.block(Identifier("minecraft:beacon_base_blocks"))
-			.append(BlockRegistry.RUBY_BLOCK)
+			.append(BlockRegistry.rubyBlock)
 	}
 
 	private fun generateItemTags(tag: TagData) {
 		tag.item(Identifier("minecraft:beacon_payment_items"))
-			.append(ItemRegistry.RUBY)
+			.append(ItemRegistry.ruby)
 
 		tag.item(Identifier("fabric:pickaxes"))
-			.append(ItemRegistry.RUBY_PICKAXE)
+			.append(ItemRegistry.rubyPickaxe)
 
 		tag.item(Identifier("fabric:axes"))
-			.append(ItemRegistry.RUBY_AXE)
+			.append(ItemRegistry.rubyAxe)
 
 		tag.item(Identifier("fabric:swords"))
-			.append(ItemRegistry.RUBY_SWORD)
+			.append(ItemRegistry.rubySword)
 
 		tag.item(Identifier("fabric:shovels"))
-			.append(ItemRegistry.RUBY_SHOVEL)
+			.append(ItemRegistry.rubyShovel)
 
 		tag.item(Identifier("fabric:hoes"))
-			.append(ItemRegistry.RUBY_HOE)
+			.append(ItemRegistry.rubyHoe)
 	}
 }

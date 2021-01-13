@@ -66,6 +66,11 @@ tasks {
 	}
 }
 
+// add generated models to resources
+sourceSets["main"].resources {
+	srcDir("src/generated/resources")
+}
+
 java { withSourcesJar() }
 
 // configure the maven publication

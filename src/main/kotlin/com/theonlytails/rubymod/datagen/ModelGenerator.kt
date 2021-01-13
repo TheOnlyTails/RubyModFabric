@@ -1,10 +1,13 @@
 package com.theonlytails.rubymod.datagen
 
+import com.google.gson.JsonObject
 import com.theonlytails.rubymod.registries.BlockRegistry
 import com.theonlytails.rubymod.registries.ItemRegistry
 import me.shedaniel.cloth.api.datagen.v1.DataGeneratorHandler
 import me.shedaniel.cloth.api.datagen.v1.ModelStateData
+import net.minecraft.block.Block
 import net.minecraft.util.Identifier
+import net.minecraft.util.registry.Registry
 
 object ModelGenerator {
 	fun generate(handler: DataGeneratorHandler) {
@@ -16,38 +19,68 @@ object ModelGenerator {
 
 	private fun generateItems(modelStates: ModelStateData) {
 		// Items
-		modelStates.addGeneratedItemModel(ItemRegistry.POISONED_APPLE)
+		modelStates.addGeneratedItemModel(ItemRegistry.poisonedApple)
 
-		modelStates.addGeneratedItemModel(ItemRegistry.RUBY)
+		modelStates.addGeneratedItemModel(ItemRegistry.ruby)
 
-		modelStates.addSimpleItemModel(ItemRegistry.RUBY_SHEEP_SPAWN_EGG,
+		modelStates.addSimpleItemModel(ItemRegistry.rubySheepSpawnEgg,
 			Identifier("minecraft:item/template_spawn_egg"))
 
 		// Armor
-		modelStates.addGeneratedItemModel(ItemRegistry.RUBY_HELMET)
-		modelStates.addGeneratedItemModel(ItemRegistry.RUBY_CHESTPLATE)
-		modelStates.addGeneratedItemModel(ItemRegistry.RUBY_LEGGINGS)
-		modelStates.addGeneratedItemModel(ItemRegistry.RUBY_BOOTS)
+		modelStates.addGeneratedItemModel(ItemRegistry.rubyHelmet)
+		modelStates.addGeneratedItemModel(ItemRegistry.rubyChestplate)
+		modelStates.addGeneratedItemModel(ItemRegistry.rubyLeggings)
+		modelStates.addGeneratedItemModel(ItemRegistry.rubyBoots)
 
 		// Tools
-		modelStates.addHandheldItemModel(ItemRegistry.RUBY_PICKAXE)
-		modelStates.addHandheldItemModel(ItemRegistry.RUBY_SWORD)
-		modelStates.addHandheldItemModel(ItemRegistry.RUBY_AXE)
-		modelStates.addHandheldItemModel(ItemRegistry.RUBY_SHOVEL)
-		modelStates.addHandheldItemModel(ItemRegistry.RUBY_HOE)
+		modelStates.addHandheldItemModel(ItemRegistry.rubyPickaxe)
+		modelStates.addHandheldItemModel(ItemRegistry.rubySword)
+		modelStates.addHandheldItemModel(ItemRegistry.rubyAxe)
+		modelStates.addHandheldItemModel(ItemRegistry.rubyShovel)
+		modelStates.addHandheldItemModel(ItemRegistry.rubyHoe)
 
 		// Block items
-		modelStates.addSimpleBlockItemModel(BlockRegistry.RUBY_BLOCK)
-		modelStates.addSimpleBlockItemModel(BlockRegistry.RUBY_ORE)
-		modelStates.addSimpleBlockItemModel(BlockRegistry.RUBY_WOOL)
-		modelStates.addSimpleBlockItemModel(BlockRegistry.RUBY_CARPET)
-		modelStates.addSimpleBlockItemModel(BlockRegistry.LOGIC_GATE)
+		modelStates.addSimpleBlockItemModel(BlockRegistry.rubyBlock)
+		modelStates.addSimpleBlockItemModel(BlockRegistry.rubyOre)
+		modelStates.addSimpleBlockItemModel(BlockRegistry.rubyWool)
+		modelStates.addSimpleBlockItemModel(BlockRegistry.rubyCarpet)
+		modelStates.addGeneratedItemModel(BlockRegistry.logicGate.asItem())
 	}
 
 	private fun generateBlocks(modelStates: ModelStateData) {
-		modelStates.addSingletonCubeAll(BlockRegistry.RUBY_BLOCK)
-		modelStates.addSingletonCubeAll(BlockRegistry.RUBY_WOOL)
-		modelStates.addSingletonCubeAll(BlockRegistry.RUBY_ORE)
-		modelStates.addSimpleBlockModel(BlockRegistry.RUBY_CARPET, Identifier("minecraft:block/carpet"))
+		modelStates.addSingletonCubeAll(BlockRegistry.rubyBlock)
+		modelStates.addSingletonCubeAll(BlockRegistry.rubyWool)
+		modelStates.addSingletonCubeAll(BlockRegistry.rubyOre)
+		modelStates.registerCarpet(BlockRegistry.rubyCarpet, BlockRegistry.rubyWool)
+	}
+}
+
+private fun ModelStateData.registerCarpet(carpet: Block, wool: Block) {
+	addState(carpet) {
+		val finalJson = JsonObject()
+
+		val variants = JsonObject()
+		val defaultVariant = JsonObject()
+		val carpetId = Registry.BLOCK.getId(carpet)
+		defaultVariant.addProperty("model", "${carpetId.namespace}:block/${carpetId.path}")
+		variants.add("", defaultVariant)
+
+		finalJson.add("variants", variants)
+
+		finalJson
+	}
+
+	addBlockModel(carpet) {
+		val finalJson = JsonObject()
+
+		finalJson.addProperty("parent", Identifier("minecraft:carpet").toString())
+
+		val textures = JsonObject()
+		val woolId = Registry.BLOCK.getId(wool)
+		textures.addProperty("wool", "${woolId.namespace}:block/${woolId.path}")
+
+		finalJson.add("textures", textures)
+
+		finalJson
 	}
 }

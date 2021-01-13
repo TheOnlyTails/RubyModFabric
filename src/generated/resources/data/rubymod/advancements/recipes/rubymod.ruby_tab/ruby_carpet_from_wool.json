@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "rubymod:ruby_carpet_from_wool"
+    ]
+  },
+  "criteria": {
+    "hasRubyWool": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "rubymod:ruby_wool"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "rubymod:ruby_carpet_from_wool"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "hasRubyWool",
+      "has_the_recipe"
+    ]
+  ]
+}

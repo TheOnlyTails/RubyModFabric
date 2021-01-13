@@ -24,7 +24,7 @@ object RubyMod : ModInitializer {
 	const val MOD_ID = "rubymod"
 
 	val RUBY_TAB: ItemGroup = FabricItemGroupBuilder.build(id("ruby_tab")) {
-		ItemStack(ItemRegistry.RUBY)
+		ItemStack(ItemRegistry.ruby)
 	}
 
 	val LOGGER: Logger = LogManager.getLogger()
@@ -43,7 +43,7 @@ object RubyMod : ModInitializer {
 		FeatureGen.addFeaturesToBiomes()
 
 		BrewingRecipeRegistryInvoker.invokeRegisterPotionRecipe(Potions.WATER,
-			ItemRegistry.RUBY,
+			ItemRegistry.ruby,
 			PotionRegistry.MOTIVATION)
 		addTime(PotionRegistry.MOTIVATION, PotionRegistry.LONG_MOTIVATION)
 		addPotency(PotionRegistry.MOTIVATION, PotionRegistry.STRONG_MOTIVATION)

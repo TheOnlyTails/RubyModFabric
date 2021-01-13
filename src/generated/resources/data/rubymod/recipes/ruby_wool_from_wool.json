@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wool",
+  "ingredients": [
+    {
+      "item": "minecraft:white_wool"
+    },
+    {
+      "item": "rubymod:ruby"
+    }
+  ],
+  "result": {
+    "item": "rubymod:ruby_wool"
+  }
+}

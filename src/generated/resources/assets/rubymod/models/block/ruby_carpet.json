@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:carpet",
+  "textures": {
+    "wool": "rubymod:block/ruby_wool"
+  }
+}

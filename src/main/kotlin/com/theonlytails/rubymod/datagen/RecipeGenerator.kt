@@ -1,5 +1,6 @@
 package com.theonlytails.rubymod.datagen
 
+import com.theonlytails.rubymod.id
 import com.theonlytails.rubymod.registries.BlockRegistry
 import com.theonlytails.rubymod.registries.ItemRegistry
 import me.shedaniel.cloth.api.datagen.v1.DataGeneratorHandler
@@ -27,69 +28,69 @@ object RecipeGenerator {
 	}
 
 	private fun shapedRecipes(recipeData: RecipeData) {
-		ShapedRecipeJsonFactory.create(BlockRegistry.LOGIC_GATE)
+		ShapedRecipeJsonFactory.create(BlockRegistry.logicGate)
 			.pattern("t t")
 			.pattern("srs")
 			.input('t', Items.REDSTONE_TORCH)
 			.input('s', ItemTags.STONE_CRAFTING_MATERIALS)
-			.input('r', ItemRegistry.RUBY)
-			.criterion("hasRuby", conditionsFromItem(ItemRegistry.RUBY))
+			.input('r', ItemRegistry.ruby)
+			.criterion("hasRuby", conditionsFromItem(ItemRegistry.ruby))
 			.offerTo(recipeData)
 
-		ShapedRecipeJsonFactory.create(BlockRegistry.RUBY_BLOCK)
+		ShapedRecipeJsonFactory.create(BlockRegistry.rubyBlock)
 			.pattern("rrr")
 			.pattern("rrr")
 			.pattern("rrr")
-			.input('r', ItemRegistry.RUBY)
-			.criterion("hasRuby", conditionsFromItem(ItemRegistry.RUBY))
+			.input('r', ItemRegistry.ruby)
+			.criterion("hasRuby", conditionsFromItem(ItemRegistry.ruby))
 			.offerTo(recipeData)
 
-		ShapedRecipeJsonFactory.create(BlockRegistry.RUBY_CARPET, 8)
+		ShapedRecipeJsonFactory.create(BlockRegistry.rubyCarpet, 8)
 			.pattern("ccc")
 			.pattern("crc")
 			.pattern("ccc")
 			.input('c', Items.WHITE_CARPET)
-			.input('r', ItemRegistry.RUBY)
+			.input('r', ItemRegistry.ruby)
 			.group("carpet")
-			.criterion("hasRuby", conditionsFromItem(ItemRegistry.RUBY))
-			.offerTo(recipeData, "ruby_carpet_from_carpet")
+			.criterion("hasRuby", conditionsFromItem(ItemRegistry.ruby))
+			.offerTo(recipeData, id("ruby_carpet_from_carpet"))
 
-		ShapedRecipeJsonFactory.create(BlockRegistry.RUBY_CARPET, 3)
+		ShapedRecipeJsonFactory.create(BlockRegistry.rubyCarpet, 3)
 			.pattern("ww")
-			.input('w', BlockRegistry.RUBY_WOOL)
+			.input('w', BlockRegistry.rubyWool)
 			.group("carpet")
-			.criterion("hasRubyWool", conditionsFromItem(BlockRegistry.RUBY_WOOL))
-			.offerTo(recipeData, "ruby_carpet_from_wool")
+			.criterion("hasRubyWool", conditionsFromItem(BlockRegistry.rubyWool))
+			.offerTo(recipeData, id("ruby_carpet_from_wool"))
 	}
 
 	private fun shapelessRecipes(recipeData: RecipeData) {
-		ShapelessRecipeJsonFactory.create(ItemRegistry.POISONED_APPLE)
+		ShapelessRecipeJsonFactory.create(ItemRegistry.poisonedApple)
 			.input(Items.APPLE)
-			.input(ItemRegistry.RUBY)
-			.criterion("hasRuby", conditionsFromItem(ItemRegistry.RUBY))
+			.input(ItemRegistry.ruby)
+			.criterion("hasRuby", conditionsFromItem(ItemRegistry.ruby))
 			.offerTo(recipeData)
 
-		ShapelessRecipeJsonFactory.create(ItemRegistry.RUBY, 9)
-			.input(BlockRegistry.RUBY_BLOCK)
-			.criterion("hasRubyBlock", conditionsFromItem(BlockRegistry.RUBY_BLOCK))
-			.offerTo(recipeData, "ruby_block_to_ruby")
+		ShapelessRecipeJsonFactory.create(ItemRegistry.ruby, 9)
+			.input(BlockRegistry.rubyBlock)
+			.criterion("hasRubyBlock", conditionsFromItem(BlockRegistry.rubyBlock))
+			.offerTo(recipeData, id("ruby_block_to_ruby"))
 
-		ShapelessRecipeJsonFactory.create(BlockRegistry.RUBY_WOOL)
+		ShapelessRecipeJsonFactory.create(BlockRegistry.rubyWool)
 			.input(Items.WHITE_WOOL)
-			.input(ItemRegistry.RUBY)
+			.input(ItemRegistry.ruby)
 			.group("wool")
 			.criterion("hasWhiteWool", conditionsFromItem(Blocks.WHITE_WOOL))
-			.offerTo(recipeData, "ruby_wool_from_wool")
+			.offerTo(recipeData, id("ruby_wool_from_wool"))
 	}
 
 	private fun smeltingRecipes(recipeData: RecipeData) {
-		CookingRecipeJsonFactory.createSmelting(Ingredient.ofItems(BlockRegistry.RUBY_ORE), ItemRegistry.RUBY, 1f, 100)
-			.criterion("hasRuby", conditionsFromItem(ItemRegistry.RUBY))
-			.offerTo(recipeData, "ruby_ore_smelt")
+		CookingRecipeJsonFactory.createSmelting(Ingredient.ofItems(BlockRegistry.rubyOre), ItemRegistry.ruby, 1f, 100)
+			.criterion("hasRuby", conditionsFromItem(ItemRegistry.ruby))
+			.offerTo(recipeData, id("ruby_ore_smelt"))
 
-		CookingRecipeJsonFactory.createBlasting(Ingredient.ofItems(BlockRegistry.RUBY_ORE), ItemRegistry.RUBY, 1f, 100)
-			.criterion("hasRuby", conditionsFromItem(ItemRegistry.RUBY))
-			.offerTo(recipeData, "ruby_ore_blast")
+		CookingRecipeJsonFactory.createBlasting(Ingredient.ofItems(BlockRegistry.rubyOre), ItemRegistry.ruby, 1f, 100)
+			.criterion("hasRuby", conditionsFromItem(ItemRegistry.ruby))
+			.offerTo(recipeData, id("ruby_ore_blast"))
 	}
 }
 

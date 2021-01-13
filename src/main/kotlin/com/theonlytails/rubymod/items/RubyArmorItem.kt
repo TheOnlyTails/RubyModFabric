@@ -20,7 +20,7 @@ class RubyArmorItem(slot: EquipmentSlot) : ArmorItem(RubyArmorMaterial(), slot, 
 			val wearingAllRubyArmor = StreamSupport.stream(armor.spliterator(), false)
 				.allMatch { it.item is RubyArmorItem }
 
-			if (wearingAllRubyArmor && entity.mainHandStack.item === ItemRegistry.RUBY_PICKAXE) {
+			if (wearingAllRubyArmor && entity.mainHandStack.item === ItemRegistry.rubyPickaxe) {
 				entity.addStatusEffect(StatusEffectInstance(
 					StatusEffects.HASTE,
 					220,

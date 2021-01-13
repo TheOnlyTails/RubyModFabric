@@ -22,7 +22,7 @@ object FeatureGen {
 	private val ORE_RUBY = Feature.NO_SURFACE_ORE
 		.configure(OreFeatureConfig(
 			OreFeatureConfig.Rules.BASE_STONE_NETHER,
-			BlockRegistry.RUBY_ORE.defaultState,
+			BlockRegistry.rubyOre.defaultState,
 			veinSize
 		))
 		.decorate(Decorator.RANGE.configure(RangeDecoratorConfig(minHeight, 0, maxHeight)))

@@ -23,32 +23,32 @@ object ItemRegistry {
 	@JvmStatic
 	val rubyToolMaterial = RubyToolMaterial()
 
-	val RUBY: Item = register("ruby", Item(DEFAULT_ITEM_PROPERTY))
+	val ruby: Item = register("ruby", Item(DEFAULT_ITEM_PROPERTY))
 
-	val RUBY_HELMET: Item = register("ruby_helmet", RubyArmorItem(EquipmentSlot.HEAD))
+	val rubyHelmet: Item = register("ruby_helmet", RubyArmorItem(EquipmentSlot.HEAD))
 
-	val RUBY_CHESTPLATE: Item = register("ruby_chestplate", RubyArmorItem(EquipmentSlot.CHEST))
+	val rubyChestplate: Item = register("ruby_chestplate", RubyArmorItem(EquipmentSlot.CHEST))
 
-	val RUBY_LEGGINGS: Item = register("ruby_leggings", RubyArmorItem(EquipmentSlot.LEGS))
+	val rubyLeggings: Item = register("ruby_leggings", RubyArmorItem(EquipmentSlot.LEGS))
 
-	val RUBY_BOOTS: Item = register("ruby_boots", RubyArmorItem(EquipmentSlot.FEET))
+	val rubyBoots: Item = register("ruby_boots", RubyArmorItem(EquipmentSlot.FEET))
 
-	val RUBY_PICKAXE: Item = register("ruby_pickaxe",
+	val rubyPickaxe: Item = register("ruby_pickaxe",
 		object : PickaxeItem(rubyToolMaterial, 1, -2.8f, UNSTACKABLE_PROPERTY) {})
 
-	val RUBY_SWORD: Item = register("ruby_sword",
+	val rubySword: Item = register("ruby_sword",
 		SwordItem(rubyToolMaterial, 2, -2.4f, UNSTACKABLE_PROPERTY))
 
-	val RUBY_AXE: Item = register("ruby_axe",
+	val rubyAxe: Item = register("ruby_axe",
 		object : AxeItem(rubyToolMaterial, 5f, -3.05f, UNSTACKABLE_PROPERTY) {})
 
-	val RUBY_SHOVEL: Item = register("ruby_shovel",
+	val rubyShovel: Item = register("ruby_shovel",
 		ShovelItem(rubyToolMaterial, 1f, -3f, UNSTACKABLE_PROPERTY))
 
-	val RUBY_HOE: Item = register("ruby_hoe",
+	val rubyHoe: Item = register("ruby_hoe",
 		object : HoeItem(rubyToolMaterial, -2, -0.5f, UNSTACKABLE_PROPERTY) {})
 
-	val POISONED_APPLE: Item = register("poisoned_apple",
+	val poisonedApple: Item = register("poisoned_apple",
 		Item(Settings()
 			.group(ItemGroup.FOOD)
 			.food(FoodComponent.Builder()
@@ -75,7 +75,7 @@ object ItemRegistry {
 				.build()
 			)))
 
-	val RUBY_SHEEP_SPAWN_EGG = register("ruby_sheep_spawn_egg",
+	val rubySheepSpawnEgg = register("ruby_sheep_spawn_egg",
 		SpawnEggItem(
 			EntityTypeRegistry.RUBY_SHEEP,
 			0xE3E6E7,

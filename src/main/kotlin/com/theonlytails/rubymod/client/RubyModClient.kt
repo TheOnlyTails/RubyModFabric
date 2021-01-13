@@ -18,6 +18,6 @@ class RubyModClient : ClientModInitializer {
 			RubySheepRenderer(dispatcher)
 		}
 
-		BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.LOGIC_GATE, RenderLayer.getCutout())
+		BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.logicGate, RenderLayer.getCutout())
 	}
 }

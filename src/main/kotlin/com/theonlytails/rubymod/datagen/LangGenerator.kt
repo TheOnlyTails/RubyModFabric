@@ -10,29 +10,29 @@ object LangGenerator {
 	fun generate() {
 		addLang(lang()
 			// General items
-			.item(ItemRegistry.RUBY, "Ruby")
-			.item(ItemRegistry.POISONED_APPLE, "Poisoned Apple")
-			.item(ItemRegistry.RUBY_SHEEP_SPAWN_EGG, "Ruby Sheep Spawn Egg")
+			.item(ItemRegistry.ruby, "Ruby")
+			.item(ItemRegistry.poisonedApple, "Poisoned Apple")
+			.item(ItemRegistry.rubySheepSpawnEgg, "Ruby Sheep Spawn Egg")
 
 			// Armor
-			.item(ItemRegistry.RUBY_HELMET, "Ruby Helmet")
-			.item(ItemRegistry.RUBY_CHESTPLATE, "Ruby Chestplate")
-			.item(ItemRegistry.RUBY_LEGGINGS, "Ruby Leggings")
-			.item(ItemRegistry.RUBY_BOOTS, "Ruby Boots")
+			.item(ItemRegistry.rubyHelmet, "Ruby Helmet")
+			.item(ItemRegistry.rubyChestplate, "Ruby Chestplate")
+			.item(ItemRegistry.rubyLeggings, "Ruby Leggings")
+			.item(ItemRegistry.rubyBoots, "Ruby Boots")
 
 			// Tools
-			.item(ItemRegistry.RUBY_PICKAXE, "Ruby Pickaxe")
-			.item(ItemRegistry.RUBY_AXE, "Ruby Axe")
-			.item(ItemRegistry.RUBY_SWORD, "Ruby Sword")
-			.item(ItemRegistry.RUBY_SHOVEL, "Ruby Shovel")
-			.item(ItemRegistry.RUBY_HOE, "Ruby Hoe")
+			.item(ItemRegistry.rubyPickaxe, "Ruby Pickaxe")
+			.item(ItemRegistry.rubyAxe, "Ruby Axe")
+			.item(ItemRegistry.rubySword, "Ruby Sword")
+			.item(ItemRegistry.rubyShovel, "Ruby Shovel")
+			.item(ItemRegistry.rubyHoe, "Ruby Hoe")
 
 			// Blocks
-			.block(BlockRegistry.RUBY_BLOCK, "Ruby Block")
-			.block(BlockRegistry.RUBY_ORE, "Ruby Ore")
-			.block(BlockRegistry.RUBY_WOOL, "Ruby Wool")
-			.block(BlockRegistry.RUBY_CARPET, "Ruby Carpet")
-			.block(BlockRegistry.LOGIC_GATE, "Logic Gate")
+			.block(BlockRegistry.rubyBlock, "Ruby Block")
+			.block(BlockRegistry.rubyOre, "Ruby Ore")
+			.block(BlockRegistry.rubyWool, "Ruby Wool")
+			.block(BlockRegistry.rubyCarpet, "Ruby Carpet")
+			.block(BlockRegistry.logicGate, "Logic Gate")
 
 			// Enchantments
 			.enchantment(EnchantmentRegistry.STINGER, "Stinger")

@@ -17,18 +17,18 @@ object LootTableGenerator {
 	}
 
 	private fun generateBlocks(lootTableData: LootTableData) {
-		lootTableData.registerBlockDropSelf(BlockRegistry.LOGIC_GATE)
+		lootTableData.registerBlockDropSelf(BlockRegistry.logicGate)
 
-		lootTableData.registerBlockDropSelf(BlockRegistry.RUBY_BLOCK)
+		lootTableData.registerBlockDropSelf(BlockRegistry.rubyBlock)
 
-		lootTableData.registerBlockDropSelf(BlockRegistry.RUBY_WOOL)
+		lootTableData.registerBlockDropSelf(BlockRegistry.rubyWool)
 
-		lootTableData.register(BlockRegistry.RUBY_ORE,
-			BlockLootTableGeneratorInvoker.oreDrops(BlockRegistry.RUBY_ORE, ItemRegistry.RUBY))
+		lootTableData.register(BlockRegistry.rubyOre,
+			BlockLootTableGeneratorInvoker.oreDrops(BlockRegistry.rubyOre, ItemRegistry.ruby))
 	}
 
 	private fun generateEntities(lootTableData: LootTableData) {
 		lootTableData.register(EntityTypeRegistry.RUBY_SHEEP,
-			EntityLootTableGeneratorInvoker.createForSheep(BlockRegistry.RUBY_WOOL))
+			EntityLootTableGeneratorInvoker.createForSheep(BlockRegistry.rubyWool))
 	}
 }
