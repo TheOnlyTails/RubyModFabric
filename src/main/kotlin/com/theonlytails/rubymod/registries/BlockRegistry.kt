@@ -1,8 +1,8 @@
 package com.theonlytails.rubymod.registries
 
-import com.theonlytails.rubymod.RubyMod
 import com.theonlytails.rubymod.blocks.LogicGateBlock
 import com.theonlytails.rubymod.blocks.RubyCarpetBlock
+import com.theonlytails.rubymod.id
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags
 import net.minecraft.block.*
@@ -14,7 +14,7 @@ import java.util.Random
 object BlockRegistry {
 	val customBlocks = mutableListOf<Block>()
 	private fun register(id: String, block: Block): Block {
-		return Registry.register(Registry.BLOCK, RubyMod.id(id), block).also { customBlocks.add(block) }
+		return Registry.register(Registry.BLOCK, id(id), block).also { customBlocks.add(block) }
 	}
 
 	val RUBY_BLOCK: Block = register("ruby_block", Block(

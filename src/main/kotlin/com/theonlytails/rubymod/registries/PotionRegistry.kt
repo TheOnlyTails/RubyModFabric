@@ -1,6 +1,6 @@
 package com.theonlytails.rubymod.registries
 
-import com.theonlytails.rubymod.RubyMod
+import com.theonlytails.rubymod.id
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.potion.Potion
@@ -8,7 +8,7 @@ import net.minecraft.util.registry.Registry
 
 object PotionRegistry {
 	private fun register(id: String, potion: Potion) =
-		Registry.register(Registry.POTION, RubyMod.id(id), potion)
+		Registry.register(Registry.POTION, id(id), potion)
 
 	val MOTIVATION: Potion = register("motivation", Potion(
 		"motivation",

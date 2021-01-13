@@ -2,7 +2,7 @@ package com.theonlytails.rubymod
 
 import com.theonlytails.rubymod.datagen.DataGeneratorRunner
 import com.theonlytails.rubymod.entities.RubySheepEntity
-import com.theonlytails.rubymod.mixins.BrewingRecipeRegistryMixin
+import com.theonlytails.rubymod.mixins.BrewingRecipeRegistryInvoker
 import com.theonlytails.rubymod.registries.*
 import com.theonlytails.rubymod.util.materials.addPotency
 import com.theonlytails.rubymod.util.materials.addTime
@@ -22,6 +22,7 @@ import org.apache.logging.log4j.Logger
 
 object RubyMod : ModInitializer {
 	const val MOD_ID = "rubymod"
+
 	val RUBY_TAB: ItemGroup = FabricItemGroupBuilder.build(id("ruby_tab")) {
 		ItemStack(ItemRegistry.RUBY)
 	}
@@ -35,13 +36,13 @@ object RubyMod : ModInitializer {
 		EntityTypeRegistry
 		registerBlockItems()
 
-		DataGeneratorRunner.initGenerators()
+		DataGeneratorRunner.register()
 
 		FabricDefaultAttributeRegistry.register(EntityTypeRegistry.RUBY_SHEEP, RubySheepEntity.setCustomAttributes())
 
 		FeatureGen.addFeaturesToBiomes()
 
-		BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.WATER,
+		BrewingRecipeRegistryInvoker.invokeRegisterPotionRecipe(Potions.WATER,
 			ItemRegistry.RUBY,
 			PotionRegistry.MOTIVATION)
 		addTime(PotionRegistry.MOTIVATION, PotionRegistry.LONG_MOTIVATION)
@@ -55,11 +56,11 @@ object RubyMod : ModInitializer {
 	private fun registerBlockItems() {
 		BlockRegistry.customBlocks.forEach { block ->
 			ItemRegistry.register(Registry.BLOCK.getId(block).path,
-				BlockItem(block, ItemRegistry.DEFAULT_NO_DAMAGE_PROPERTY.maxCount(64)))
+				BlockItem(block, ItemRegistry.DEFAULT_ITEM_PROPERTY))
 		}
 	}
 
-	@JvmStatic
-	fun id(path: String) = Identifier(MOD_ID, path)
 }
+
+fun id(path: String) = Identifier(RubyMod.MOD_ID, path)
 

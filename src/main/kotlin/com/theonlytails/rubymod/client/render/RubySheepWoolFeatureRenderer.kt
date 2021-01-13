@@ -1,8 +1,8 @@
 package com.theonlytails.rubymod.client.render
 
-import com.theonlytails.rubymod.RubyMod
 import com.theonlytails.rubymod.client.model.RubySheepModel
 import com.theonlytails.rubymod.entities.RubySheepEntity
+import com.theonlytails.rubymod.id
 import net.minecraft.client.render.VertexConsumerProvider
 import net.minecraft.client.render.entity.feature.FeatureRenderer
 import net.minecraft.client.render.entity.feature.FeatureRendererContext
@@ -70,6 +70,6 @@ class RubySheepWoolFeatureRenderer(featureRendererContext: FeatureRendererContex
 	}
 
 	companion object {
-		private val TEXTURE = RubyMod.id("textures/entity/ruby_sheep/ruby_sheep_fur.png")
+		private val TEXTURE = id("textures/entity/ruby_sheep/ruby_sheep_fur.png")
 	}
 }

@@ -1,6 +1,7 @@
 package com.theonlytails.rubymod.registries
 
 import com.theonlytails.rubymod.RubyMod
+import com.theonlytails.rubymod.id
 import com.theonlytails.rubymod.items.RubyArmorItem
 import com.theonlytails.rubymod.util.materials.RubyArmorMaterial
 import com.theonlytails.rubymod.util.materials.RubyToolMaterial
@@ -12,9 +13,9 @@ import net.minecraft.item.Item.Settings
 import net.minecraft.util.registry.Registry
 
 object ItemRegistry {
-	fun register(id: String, item: Item): Item = Registry.register(Registry.ITEM, RubyMod.id(id), item)
-	val DEFAULT_ITEM_PROPERTY: Settings = Settings().group(RubyMod.RUBY_TAB)
-	val DEFAULT_NO_DAMAGE_PROPERTY: Settings = Settings().group(RubyMod.RUBY_TAB).maxDamage(0)
+	fun register(id: String, item: Item): Item = Registry.register(Registry.ITEM, id(id), item)
+	val DEFAULT_ITEM_PROPERTY: Settings = Settings().group(RubyMod.RUBY_TAB).maxDamage(0).maxCount(64)
+	val UNSTACKABLE_PROPERTY: Settings = Settings().group(RubyMod.RUBY_TAB)
 
 	@JvmStatic
 	val rubyArmorMaterial = RubyArmorMaterial()
@@ -22,7 +23,7 @@ object ItemRegistry {
 	@JvmStatic
 	val rubyToolMaterial = RubyToolMaterial()
 
-	val RUBY: Item = register("ruby", Item(DEFAULT_NO_DAMAGE_PROPERTY))
+	val RUBY: Item = register("ruby", Item(DEFAULT_ITEM_PROPERTY))
 
 	val RUBY_HELMET: Item = register("ruby_helmet", RubyArmorItem(EquipmentSlot.HEAD))
 
@@ -33,19 +34,19 @@ object ItemRegistry {
 	val RUBY_BOOTS: Item = register("ruby_boots", RubyArmorItem(EquipmentSlot.FEET))
 
 	val RUBY_PICKAXE: Item = register("ruby_pickaxe",
-		object : PickaxeItem(rubyToolMaterial, 1, -2.8f, DEFAULT_ITEM_PROPERTY) {})
+		object : PickaxeItem(rubyToolMaterial, 1, -2.8f, UNSTACKABLE_PROPERTY) {})
 
 	val RUBY_SWORD: Item = register("ruby_sword",
-		SwordItem(rubyToolMaterial, 2, -2.4f, DEFAULT_ITEM_PROPERTY))
+		SwordItem(rubyToolMaterial, 2, -2.4f, UNSTACKABLE_PROPERTY))
 
 	val RUBY_AXE: Item = register("ruby_axe",
-		object : AxeItem(rubyToolMaterial, 5f, -3.05f, DEFAULT_ITEM_PROPERTY) {})
+		object : AxeItem(rubyToolMaterial, 5f, -3.05f, UNSTACKABLE_PROPERTY) {})
 
 	val RUBY_SHOVEL: Item = register("ruby_shovel",
-		ShovelItem(rubyToolMaterial, 1f, -3f, DEFAULT_ITEM_PROPERTY))
+		ShovelItem(rubyToolMaterial, 1f, -3f, UNSTACKABLE_PROPERTY))
 
 	val RUBY_HOE: Item = register("ruby_hoe",
-		object : HoeItem(rubyToolMaterial, -2, -0.5f, DEFAULT_ITEM_PROPERTY) {})
+		object : HoeItem(rubyToolMaterial, -2, -0.5f, UNSTACKABLE_PROPERTY) {})
 
 	val POISONED_APPLE: Item = register("poisoned_apple",
 		Item(Settings()
@@ -79,6 +80,6 @@ object ItemRegistry {
 			EntityTypeRegistry.RUBY_SHEEP,
 			0xE3E6E7,
 			0xFD0D0D,
-			DEFAULT_NO_DAMAGE_PROPERTY.maxCount(64)
+			DEFAULT_ITEM_PROPERTY
 		))
 }

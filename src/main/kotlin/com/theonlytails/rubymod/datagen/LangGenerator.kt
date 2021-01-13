@@ -1,15 +1,15 @@
 package com.theonlytails.rubymod.datagen
 
-import com.theonlytails.rubymod.RubyMod.id
 import com.theonlytails.rubymod.datagen.DataGeneratorRunner.RESOURCE_PACK
+import com.theonlytails.rubymod.id
 import com.theonlytails.rubymod.registries.*
 import net.devtech.arrp.json.lang.JLang
 import net.devtech.arrp.json.lang.JLang.lang
 
 object LangGenerator {
 	fun generate() {
-		// General items
 		addLang(lang()
+			// General items
 			.item(ItemRegistry.RUBY, "Ruby")
 			.item(ItemRegistry.POISONED_APPLE, "Poisoned Apple")
 			.item(ItemRegistry.RUBY_SHEEP_SPAWN_EGG, "Ruby Sheep Spawn Egg")
@@ -44,8 +44,8 @@ object LangGenerator {
 			.itemGroup(id("ruby_tab"), "RubyMod")
 
 			// Potions
-			.potion(id("motivation"), "Motivation")
-			.potion(id("laziness"), "Laziness"))
+			.allPotionOf(id("motivation"), "Motivation")
+			.allPotionOf(id("laziness"), "Laziness"))
 	}
 
 	private fun addLang(lang: JLang) {

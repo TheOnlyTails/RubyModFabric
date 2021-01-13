@@ -29,7 +29,11 @@ dependencies {
 
 	modImplementation("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin_version")}")
 
-	// ARRP API - for data gen
+	// Cloth API - for data gen
+	modApi("me.shedaniel.cloth.api:cloth-api:${property("cloth_api_version")}")
+	include("me.shedaniel.cloth.api:cloth-api:${property("cloth_api_version")}")
+
+	// ARRP API - for lang data gen
 	modImplementation("net.devtech:arrp:${property("arrp_version")}")
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.

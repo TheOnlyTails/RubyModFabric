@@ -1,6 +1,6 @@
 package com.theonlytails.rubymod.entities
 
-import com.theonlytails.rubymod.RubyMod.id
+import com.theonlytails.rubymod.id
 import com.theonlytails.rubymod.registries.BlockRegistry
 import com.theonlytails.rubymod.registries.ItemRegistry
 import net.minecraft.block.BlockState

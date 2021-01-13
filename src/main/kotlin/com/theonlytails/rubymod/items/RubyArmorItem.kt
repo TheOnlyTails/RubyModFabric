@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack
 import net.minecraft.world.World
 import java.util.stream.StreamSupport
 
-class RubyArmorItem(slot: EquipmentSlot) : ArmorItem(RubyArmorMaterial(), slot, ItemRegistry.DEFAULT_ITEM_PROPERTY) {
+class RubyArmorItem(slot: EquipmentSlot) : ArmorItem(RubyArmorMaterial(), slot, ItemRegistry.UNSTACKABLE_PROPERTY) {
 	override fun inventoryTick(stack: ItemStack, world: World, entity: Entity, slot: Int, selected: Boolean) {
 		if (entity is PlayerEntity) {
 			val armor = entity.armorItems
