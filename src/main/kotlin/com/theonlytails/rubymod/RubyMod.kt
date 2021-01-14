@@ -34,6 +34,7 @@ object RubyMod : ModInitializer {
 		ItemRegistry
 		EnchantmentRegistry
 		EntityTypeRegistry
+		VillagerProfessionRegistry
 		registerBlockItems()
 
 		DataGeneratorRunner.register()
@@ -51,6 +52,8 @@ object RubyMod : ModInitializer {
 		invertPotion(PotionRegistry.MOTIVATION, PotionRegistry.LAZINESS)
 		addTime(PotionRegistry.LAZINESS, PotionRegistry.LONG_LAZINESS)
 		addPotency(PotionRegistry.LAZINESS, PotionRegistry.STRONG_LAZINESS)
+
+		VillagerProfessionRegistry.initTrades()
 	}
 
 	private fun registerBlockItems() {

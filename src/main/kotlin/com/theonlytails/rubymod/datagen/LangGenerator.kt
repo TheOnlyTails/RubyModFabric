@@ -2,7 +2,9 @@ package com.theonlytails.rubymod.datagen
 
 import com.theonlytails.rubymod.datagen.DataGeneratorRunner.RESOURCE_PACK
 import com.theonlytails.rubymod.id
-import com.theonlytails.rubymod.registries.*
+import com.theonlytails.rubymod.registries.BlockRegistry
+import com.theonlytails.rubymod.registries.EnchantmentRegistry
+import com.theonlytails.rubymod.registries.ItemRegistry
 import net.devtech.arrp.json.lang.JLang
 import net.devtech.arrp.json.lang.JLang.lang
 
@@ -39,7 +41,8 @@ object LangGenerator {
 			.enchantment(EnchantmentRegistry.STINGER, "Stinger")
 
 			// Entities
-			.entity(EntityTypeRegistry.RUBY_SHEEP, "Ruby Sheep")
+			.entry("entity.rubymod.ruby_sheep", "Ruby Sheep")
+			.entry("entity.minecraft.villager.jeweler", "Jeweler")
 
 			// Item groups (creative tabs)
 			.itemGroup(id("ruby_tab"), "RubyMod")
