@@ -45,6 +45,7 @@ object ModelGenerator {
 		modelStates.addSimpleBlockItemModel(BlockRegistry.rubyWool)
 		modelStates.addSimpleBlockItemModel(BlockRegistry.rubyCarpet)
 		modelStates.addGeneratedItemModel(BlockRegistry.logicGate.asItem())
+		modelStates.addSimpleBlockItemModel(BlockRegistry.rubyBarrel)
 	}
 
 	private fun generateBlocks(modelStates: ModelStateData) {
@@ -52,6 +53,7 @@ object ModelGenerator {
 		modelStates.addSingletonCubeAll(BlockRegistry.rubyWool)
 		modelStates.addSingletonCubeAll(BlockRegistry.rubyOre)
 		modelStates.registerCarpet(BlockRegistry.rubyCarpet, BlockRegistry.rubyWool)
+		modelStates.registerBarrel(BlockRegistry.rubyBarrel)
 	}
 }
 
@@ -78,6 +80,57 @@ private fun ModelStateData.registerCarpet(carpet: Block, wool: Block) {
 		val textures = JsonObject()
 		val woolId = Registry.BLOCK.getId(wool)
 		textures.addProperty("wool", "${woolId.namespace}:block/${woolId.path}")
+
+		finalJson.add("textures", textures)
+
+		finalJson
+	}
+}
+
+private fun ModelStateData.registerBarrel(block: Block) {
+	val barrelId = Registry.BLOCK.getId(block)
+
+	addState(block) {
+		val finalJson = JsonObject()
+
+		val variants = JsonObject()
+		val closedVariant = JsonObject()
+		val openVariant = JsonObject()
+
+		closedVariant.addProperty("model", "${barrelId.namespace}:block/${barrelId.path}")
+		openVariant.addProperty("model", "${barrelId.namespace}:block/${barrelId.path}_open")
+		variants.add("open=false", closedVariant)
+		variants.add("open=true", openVariant)
+
+		finalJson.add("variants", variants)
+
+		finalJson
+	}
+
+	addModel(Identifier("${barrelId.namespace}:block/${barrelId.path}")) {
+		val finalJson = JsonObject()
+
+		finalJson.addProperty("parent", "minecraft:block/cube_bottom_top")
+
+		val textures = JsonObject()
+		textures.addProperty("top", "${barrelId.namespace}:block/${barrelId.path}_top")
+		textures.addProperty("bottom", "${barrelId.namespace}:block/${barrelId.path}_bottom")
+		textures.addProperty("side", "${barrelId.namespace}:block/${barrelId.path}_side")
+
+		finalJson.add("textures", textures)
+
+		finalJson
+	}
+
+	addModel(Identifier("${barrelId.namespace}:block/${barrelId.path}_open")) {
+		val finalJson = JsonObject()
+
+		finalJson.addProperty("parent", "minecraft:block/cube_bottom_top")
+
+		val textures = JsonObject()
+		textures.addProperty("top", "${barrelId.namespace}:block/${barrelId.path}_top_open")
+		textures.addProperty("bottom", "${barrelId.namespace}:block/${barrelId.path}_bottom")
+		textures.addProperty("side", "${barrelId.namespace}:block/${barrelId.path}_side")
 
 		finalJson.add("textures", textures)
 

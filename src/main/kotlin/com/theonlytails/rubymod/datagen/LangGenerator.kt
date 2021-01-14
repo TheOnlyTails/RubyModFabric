@@ -32,6 +32,7 @@ object LangGenerator {
 			.block(BlockRegistry.rubyOre, "Ruby Ore")
 			.block(BlockRegistry.rubyWool, "Ruby Wool")
 			.block(BlockRegistry.rubyCarpet, "Ruby Carpet")
+			.block(BlockRegistry.rubyBarrel, "Ruby Barrel")
 			.block(BlockRegistry.logicGate, "Logic Gate")
 
 			// Enchantments

@@ -28,6 +28,7 @@ object RecipeGenerator {
 	}
 
 	private fun shapedRecipes(recipeData: RecipeData) {
+		// logic gate
 		ShapedRecipeJsonFactory.create(BlockRegistry.logicGate)
 			.pattern("t t")
 			.pattern("srs")
@@ -37,6 +38,7 @@ object RecipeGenerator {
 			.criterion("hasRuby", conditionsFromItem(ItemRegistry.ruby))
 			.offerTo(recipeData)
 
+		// ruby block
 		ShapedRecipeJsonFactory.create(BlockRegistry.rubyBlock)
 			.pattern("rrr")
 			.pattern("rrr")
@@ -45,6 +47,7 @@ object RecipeGenerator {
 			.criterion("hasRuby", conditionsFromItem(ItemRegistry.ruby))
 			.offerTo(recipeData)
 
+		// ruby carpet from carpet
 		ShapedRecipeJsonFactory.create(BlockRegistry.rubyCarpet, 8)
 			.pattern("ccc")
 			.pattern("crc")
@@ -55,12 +58,23 @@ object RecipeGenerator {
 			.criterion("hasRuby", conditionsFromItem(ItemRegistry.ruby))
 			.offerTo(recipeData, id("ruby_carpet_from_carpet"))
 
+		// ruby carpet from wool
 		ShapedRecipeJsonFactory.create(BlockRegistry.rubyCarpet, 3)
 			.pattern("ww")
 			.input('w', BlockRegistry.rubyWool)
 			.group("carpet")
 			.criterion("hasRubyWool", conditionsFromItem(BlockRegistry.rubyWool))
 			.offerTo(recipeData, id("ruby_carpet_from_wool"))
+
+		ShapedRecipeJsonFactory.create(BlockRegistry.rubyBarrel)
+			.pattern("brb")
+			.pattern("bcb")
+			.pattern("brb")
+			.input('r', ItemRegistry.ruby)
+			.input('b', BlockRegistry.rubyBlock)
+			.input('c', Items.BARREL)
+			.criterion("hasRuby", conditionsFromItem(ItemRegistry.ruby))
+			.offerTo(recipeData)
 	}
 
 	private fun shapelessRecipes(recipeData: RecipeData) {

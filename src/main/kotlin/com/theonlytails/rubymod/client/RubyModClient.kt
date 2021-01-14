@@ -19,5 +19,17 @@ class RubyModClient : ClientModInitializer {
 		}
 
 		BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.logicGate, RenderLayer.getCutout())
+
+		// ScreenRegistry.register(ScreenHandlerTypes.rubyBarrel) {
+		// 		rubyBarrelScreenHandler: RubyBarrelScreenHandler,
+		// 		playerInventory: PlayerInventory,
+		// 		text: Text,
+		// 	->
+		// 	RubyBarrelScreen(
+		// 		rubyBarrelScreenHandler,
+		// 		playerInventory,
+		// 		text
+		// 	)
+		// }
 	}
 }
