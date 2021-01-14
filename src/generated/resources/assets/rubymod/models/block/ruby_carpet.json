@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:carpet",
+  "parent": "minecraft:block/carpet",
   "textures": {
     "wool": "rubymod:block/ruby_wool"
   }

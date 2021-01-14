@@ -73,7 +73,7 @@ private fun ModelStateData.registerCarpet(carpet: Block, wool: Block) {
 	addBlockModel(carpet) {
 		val finalJson = JsonObject()
 
-		finalJson.addProperty("parent", Identifier("minecraft:carpet").toString())
+		finalJson.addProperty("parent", Identifier("minecraft:block/carpet").toString())
 
 		val textures = JsonObject()
 		val woolId = Registry.BLOCK.getId(wool)
