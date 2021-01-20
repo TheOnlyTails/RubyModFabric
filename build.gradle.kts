@@ -7,11 +7,28 @@ plugins {
 	id("base")
 }
 
-fun property(propertyName: String): Any = project.property(propertyName)!!
+// Fabric Properties
+// Check these on https://modmuss50.me/fabric.html
+val minecraftVersion: String by extra
+val yarnMappings: String by extra
+val loaderVersion: String by extra
+val fabricVersion: String by extra
+val loomVersion: String by extra
+// Mod Properties
+val modVersion: String by extra
+val mavenGroup: String by extra
+val archivesBaseName: String by extra
+// Kotlin
+val kotlinVersion: String by extra
+val fabricKotlinVersion: String by extra
+// Cloth API
+val clothApiVersion: String by extra
+// ARRP API
+val arrpVersion: String by extra
 
-base.archivesBaseName = property("archives_base_name").toString()
-version = property("mod_version")
-group = property("maven_group")
+base.archivesBaseName = archivesBaseName
+version = modVersion
+group = mavenGroup
 
 repositories {
 	maven("http://maven.fabricmc.net/")
@@ -20,21 +37,21 @@ repositories {
 
 dependencies {
 	//to change the versions see the gradle.properties file
-	minecraft("com.mojang:minecraft:${property("minecraft_version")}")
-	mappings("net.fabricmc:yarn:${property("yarn_mappings")}:v2")
-	modImplementation("net.fabricmc:fabric-loader:${property("loader_version")}")
+	minecraft("com.mojang:minecraft:$minecraftVersion")
+	mappings("net.fabricmc:yarn:$yarnMappings:v2")
+	modImplementation("net.fabricmc:fabric-loader:$loaderVersion")
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation("net.fabricmc.fabric-api:fabric-api:${property("fabric_version")}")
+	modImplementation("net.fabricmc.fabric-api:fabric-api:$fabricVersion")
 
-	modImplementation("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin_version")}")
+	modImplementation("net.fabricmc:fabric-language-kotlin:$fabricKotlinVersion")
 
 	// Cloth API - for data gen
-	modApi("me.shedaniel.cloth.api:cloth-api:${property("cloth_api_version")}")
-	include("me.shedaniel.cloth.api:cloth-api:${property("cloth_api_version")}")
+	modApi("me.shedaniel.cloth.api:cloth-api:$clothApiVersion")
+	include("me.shedaniel.cloth.api:cloth-api:$clothApiVersion")
 
 	// ARRP API - for lang data gen
-	modImplementation("net.devtech:arrp:${property("arrp_version")}")
+	modImplementation("net.devtech:arrp:$arrpVersion")
 
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
