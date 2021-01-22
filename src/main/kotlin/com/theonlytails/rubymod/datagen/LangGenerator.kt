@@ -49,7 +49,11 @@ object LangGenerator {
 
 			// Potions
 			.allPotionOf(id("motivation"), "Motivation")
-			.allPotionOf(id("laziness"), "Laziness"))
+			.allPotionOf(id("laziness"), "Laziness")
+
+			// Biomes
+			.biome(id("ruby_hills"), "Ruby Hills")
+		)
 	}
 
 	private fun addLang(lang: JLang) {
