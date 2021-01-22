@@ -34,8 +34,11 @@ object RubyMod : ModInitializer {
 		ItemRegistry
 		EnchantmentRegistry
 		EntityTypeRegistry
+		BiomeRegistry
 		VillagerProfessionRegistry
 		registerBlockItems()
+
+		BiomeRegistry.addBiomesToGeneration()
 
 		DataGeneratorRunner.register()
 
