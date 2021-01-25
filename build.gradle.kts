@@ -96,7 +96,7 @@ tasks {
 		addGameVersion(minecraftVersion)
 		addLoader("fabric")
 
-		versionName = "Manhunt: Fabric v$modVersion"
+		versionName = "RubyMod v$modVersion"
 
 		releaseType = "beta"
 
