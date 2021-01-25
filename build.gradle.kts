@@ -1,4 +1,3 @@
-import com.modrinth.minotaur.TaskModrinthUpload
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -6,7 +5,6 @@ plugins {
 	id("maven-publish")
 	kotlin("jvm") version "1.4.0"
 	id("base")
-	id("com.modrinth.minotaur") version "1.1.0"
 }
 
 // Fabric Properties
@@ -82,24 +80,6 @@ tasks {
 		// from(sourceSets.main.resources.srcDirs) {
 		//     exclude("fabric.mod.json")
 		// }
-	}
-
-	register<TaskModrinthUpload>("publishModrinth") {
-		token = System.getenv("MODRINTH_API_TOKEN")
-
-		projectId = "oG17jL17"
-
-		println("Version: v$modVersion")
-		versionNumber = "v$modVersion"
-		uploadFile = project.tasks.getByName("remapJar")
-		addGameVersion(minecraftVersion)
-		addLoader("fabric")
-
-		versionName = "RubyMod v$modVersion"
-
-		releaseType = "beta"
-
-		dependsOn(project.tasks.getByName("remapJar"))
 	}
 }
 
