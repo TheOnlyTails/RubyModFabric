@@ -85,8 +85,7 @@ tasks {
 	}
 
 	register<TaskModrinthUpload>("publishModrinth") {
-		println("Using token ${System.getenv("MODRINTH_API_TOKEN")}")
-		token = System.getenv("MODRINTH_API_TOKEN")
+		token = System.getenv("MODRINTH_TOKEN")
 
 		projectId = "oG17jL17"
 
