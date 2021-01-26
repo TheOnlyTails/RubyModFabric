@@ -47,4 +47,9 @@ object BlockRegistry {
 	val logicGate = register("logic_gate", LogicGateBlock(Settings.of(Material.SUPPORTED)
 		.breakInstantly()
 		.sounds(BlockSoundGroup.METAL)))
+
+	val ghostWater = register("ghost_water",
+		object : FluidBlock(FluidRegistry.stillGhostWater,
+			FabricBlockSettings.copy(Blocks.WATER)) {}
+	)
 }

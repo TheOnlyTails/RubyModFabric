@@ -1,6 +1,7 @@
 package com.theonlytails.rubymod.datagen
 
 import com.theonlytails.rubymod.registries.BlockRegistry
+import com.theonlytails.rubymod.registries.FluidRegistry
 import com.theonlytails.rubymod.registries.ItemRegistry
 import me.shedaniel.cloth.api.datagen.v1.DataGeneratorHandler
 import me.shedaniel.cloth.api.datagen.v1.TagData
@@ -37,5 +38,9 @@ object TagGenerator {
 
 		tag.item(Identifier("fabric:hoes"))
 			.append(ItemRegistry.rubyHoe)
+
+		tag.fluid(Identifier("minecraft:water"))
+			.append(FluidRegistry.stillGhostWater)
+			.append(FluidRegistry.flowingGhostWater)
 	}
 }

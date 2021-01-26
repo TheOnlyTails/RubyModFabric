@@ -15,6 +15,7 @@ object LangGenerator {
 			.item(ItemRegistry.ruby, "Ruby")
 			.item(ItemRegistry.poisonedApple, "Poisoned Apple")
 			.item(ItemRegistry.rubySheepSpawnEgg, "Ruby Sheep Spawn Egg")
+			.item(ItemRegistry.ghostWaterBucket, "Ghost Water Bucket")
 
 			// Armor
 			.item(ItemRegistry.rubyHelmet, "Ruby Helmet")
@@ -36,6 +37,7 @@ object LangGenerator {
 			.block(BlockRegistry.rubyCarpet, "Ruby Carpet")
 			.block(BlockRegistry.rubyBarrel, "Ruby Barrel")
 			.block(BlockRegistry.logicGate, "Logic Gate")
+			.block(BlockRegistry.ghostWater, "Ghost Water")
 
 			// Enchantments
 			.enchantment(EnchantmentRegistry.STINGER, "Stinger")

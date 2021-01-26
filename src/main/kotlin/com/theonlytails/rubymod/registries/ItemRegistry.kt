@@ -56,4 +56,9 @@ object ItemRegistry {
 			0xFD0D0D,
 			DEFAULT_ITEM_PROPERTY
 		))
+
+	val ghostWaterBucket = register("ghost_water_bucket", BucketItem(
+		FluidRegistry.stillGhostWater,
+		Settings().recipeRemainder(Items.BUCKET).maxCount(1).group(RubyMod.RUBY_TAB)
+	))
 }

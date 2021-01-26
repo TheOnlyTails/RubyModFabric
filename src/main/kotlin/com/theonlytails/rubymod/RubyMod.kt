@@ -11,6 +11,7 @@ import com.theonlytails.rubymod.world.FeatureGen
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
+import net.minecraft.block.FluidBlock
 import net.minecraft.item.BlockItem
 import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
@@ -36,6 +37,7 @@ object RubyMod : ModInitializer {
 		EntityTypeRegistry
 		BiomeRegistry
 		VillagerProfessionRegistry
+		FluidRegistry
 		registerBlockItems()
 
 		BiomeRegistry.addBiomesToGeneration()
@@ -60,7 +62,7 @@ object RubyMod : ModInitializer {
 	}
 
 	private fun registerBlockItems() {
-		BlockRegistry.customBlocks.forEach { block ->
+		BlockRegistry.customBlocks.filter { it !is FluidBlock }.forEach { block ->
 			ItemRegistry.register(Registry.BLOCK.getId(block).path,
 				BlockItem(block, ItemRegistry.DEFAULT_ITEM_PROPERTY))
 		}

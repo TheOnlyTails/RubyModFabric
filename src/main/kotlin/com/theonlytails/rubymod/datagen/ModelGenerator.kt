@@ -23,6 +23,8 @@ object ModelGenerator {
 
 		modelStates.addGeneratedItemModel(ItemRegistry.ruby)
 
+		modelStates.addGeneratedItemModel(ItemRegistry.ghostWaterBucket)
+
 		modelStates.addSimpleItemModel(ItemRegistry.rubySheepSpawnEgg,
 			Identifier("minecraft:item/template_spawn_egg"))
 
