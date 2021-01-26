@@ -13,6 +13,7 @@ object TagGenerator {
 
 		generateBlockTags(tagData)
 		generateItemTags(tagData)
+		generateFluidTags(tagData)
 	}
 
 	private fun generateBlockTags(tag: TagData) {
@@ -38,7 +39,9 @@ object TagGenerator {
 
 		tag.item(Identifier("fabric:hoes"))
 			.append(ItemRegistry.rubyHoe)
+	}
 
+	private fun generateFluidTags(tag: TagData) {
 		tag.fluid(Identifier("minecraft:water"))
 			.append(FluidRegistry.stillGhostWater)
 			.append(FluidRegistry.flowingGhostWater)
