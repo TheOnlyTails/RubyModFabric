@@ -25,7 +25,6 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.registry.Registry
 import net.minecraft.world.BlockRenderView
-import java.awt.Color
 
 @Suppress("DEPRECATION")
 class RubyModClient : ClientModInitializer {
@@ -42,7 +41,7 @@ class RubyModClient : ClientModInitializer {
 		setupFluidRendering(FluidRegistry.stillGhostWater,
 			FluidRegistry.flowingGhostWater,
 			Identifier("minecraft", "water"),
-			Color(228, 80, 63, 255).rgb)
+			FluidRegistry.stillGhostWater.fogColor)
 
 		BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
 			FluidRegistry.stillGhostWater,

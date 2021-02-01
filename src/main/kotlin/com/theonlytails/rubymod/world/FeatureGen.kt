@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.theonlytails.rubymod.world
 
 import com.theonlytails.rubymod.id
@@ -34,7 +36,6 @@ object FeatureGen {
 
 	fun addFeaturesToBiomes() {
 		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, ORE_RUBY_KEY.value, ORE_RUBY)
-		@Suppress("DEPRECATION")
 		BiomeModifications.addFeature(
 			BiomeSelectors.foundInTheNether(),
 			GenerationStep.Feature.UNDERGROUND_ORES,

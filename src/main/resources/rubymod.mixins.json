@@ -8,7 +8,8 @@
     "BlockLootTableGeneratorInvoker",
     "BrewingRecipeRegistryInvoker",
     "EntityLootTableGeneratorInvoker",
-    "RedstoneWireMixin"
+    "RedstoneWireMixin",
+    "BiomeMixin"
   ],
   "client": [],
   "server": [],

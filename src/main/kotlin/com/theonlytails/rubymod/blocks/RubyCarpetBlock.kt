@@ -21,6 +21,7 @@ class RubyCarpetBlock : Block(Settings.of(Material.CARPET, MaterialColor.RED)
 		context: ShapeContext?,
 	): VoxelShape = shape
 
+	@Suppress("DEPRECATION")
 	override fun getStateForNeighborUpdate(
 		state: BlockState,
 		direction: Direction,

@@ -17,6 +17,7 @@ object BiomeRegistry {
 
 	private val rubyHillsKey: RegistryKey<Biome> = RegistryKey.of(Registry.BIOME_KEY, id("ruby_hills"))
 
+	@Suppress("DEPRECATION")
 	fun addBiomesToGeneration() {
 		OverworldBiomes.addContinentalBiome(rubyHillsKey, OverworldClimate.TEMPERATE, 6.0)
 	}
