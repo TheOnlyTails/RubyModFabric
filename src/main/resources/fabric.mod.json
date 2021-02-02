@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "rubymod",
   "version": "${version}",
-
   "name": "RubyMod",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
@@ -12,16 +11,21 @@
     "homepage": "https://github.com/TheOnlyTails/RubyModFabric",
     "sources": "https://github.com/TheOnlyTails/RubyModFabric"
   },
-
   "license": "CC0-1.0",
   "icon": "assets/rubymod/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.theonlytails.rubymod.RubyMod::INSTANCE"
+      {
+        "adapter": "kotlin",
+        "value": "com.theonlytails.rubymod.RubyMod"
+      }
     ],
     "client": [
-      "com.theonlytails.rubymod.client.RubyModClient"
+      {
+        "adapter": "kotlin",
+        "value": "com.theonlytails.rubymod.client.RubyModClient"
+      }
     ]
   },
   "mixins": [
